@@ -2,7 +2,7 @@
 <html lang="kor">
 <head>
   <!--타이틀 :	title 태그와 파비콘만 사용-->
-  <title><?=SERVICE_NAME?></title>
+  <title>!base</title>
   <link rel="shortcut icon" href="/images/favicon.png">
 
   <!--메타 : 메타 태그만 사용-->
@@ -38,26 +38,29 @@
 <body>
   <!-- wrap : s -->
   <div class="wrap">
-  <script type="text/javascript">
-  // 핀치 줌 모달오픈
-  function set_modal_open(){
-    modal_open('img_origin');
-    image_zoom();
-    function image_zoom(){
-      var el = document.querySelector('#box_id');
-      var pz = new PinchZoom.default(el, {
-        draggableUnzoomed: false,
-      });
+    <script type="text/javascript">
+    // 핀치 줌 모달오픈
+    function set_modal_open(){
+      modal_open('img_origin');
+      image_zoom();
+      function image_zoom(){
+        var el = document.querySelector('#box_id');
+        var pz = new PinchZoom.default(el, {
+          draggableUnzoomed: false,
+        });
+      }
     }
-  }
 
-  // go top
-  function go_top(){
-    $('body,html').animate({scrollTop:0},400);
-    return false;
-  }
-  </script>
-  <script src="/js/last_com.js"></script>
+    // go top
+    function go_top(){
+      $('body,html').animate({scrollTop:0},400);
+      return false;
+    }
+    </script>
+    <div class="body">
+      base test
+    </div>
+    <script src="/js/last_com.js"></script>
   </div>
   <!-- wrap : e -->
 </body>
