@@ -331,3 +331,63 @@ function COM_history_back_fn(){
     history.go(-1);
   }
 }
+
+// 민지:s
+
+// 이미지줌(확대/축소)
+function set_modal_open(img){
+  $("#zoom_img").attr('src', img);
+  modal_open('img_origin');
+  image_zoom();
+}
+function image_zoom(){
+  var el = document.querySelector('#box_id');
+  var pz = new PinchZoom.default(el, {
+    draggableUnzoomed: false,
+  });
+}
+
+// 위시리스트 토글버튼
+function wish_btn(element){
+  if($(element).hasClass("on")){
+    $(element).removeClass("on");
+  } else {
+    $(element).addClass("on");
+  }
+}
+
+// 탭메뉴 토글기능
+$(document).ready(function() {
+  $(".tab_area_wrap > div").hide();
+  $(".tab_area_wrap > div").first().show();
+  $(".tab_toggle_menu li").click(function() {
+    var list = $(this).index();
+    $(".tab_toggle_menu li").removeClass("active");
+    $(this).addClass("active");
+
+    $(".tab_area_wrap > div").hide();
+    $(".tab_area_wrap > div").eq(list).show();
+  });
+});
+
+// 사업자정보확인
+function license_check(){
+  var url = "http://www.ftc.go.kr/bizCommPop.do?wrkr_no="+form_license.license_no.value;
+  window.open(url, "bizCommPop", "width=750, height=700;");
+}
+
+// ios placeholder not showing
+for(var i =0; i < $('.place_wrap textarea').length; i++){
+	if ($('.place_wrap').eq(i).find('textarea').val().length === 0) {
+		$('.place_wrap').eq(i).find('textarea').siblings('.place_p').css('display','block');
+	}else{
+		$('.place_wrap').eq(i).find('textarea').siblings('.place_p').css('display','none');
+	}
+}
+$(".place_wrap textarea").on("propertychange change keyup paste input", function(){
+	if ($(this).val().length === 0) {
+		$(this).siblings('.place_p').css('display','block');
+	 }else{
+		$(this).siblings('.place_p').css('display','none');
+	};
+});
