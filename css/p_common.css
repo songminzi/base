@@ -1,40 +1,75 @@
-/*
- *  MEMO : 프로젝트 내부 공통 스타일 파일입니다.
- * 작성자 : 민지
- * 작성일 : 2021/03/29.
-*/
 @charset "utf-8";
-
+/* 전체 : U+0020-007E
+특수문자 : U+0020-002F, U+003A-0040, U+005B-0060, U+007B-007E
+영문 : U+0041-005A(대문자), U+0061-007A(소문자)
+숫자 : U+0030-0039
+ex )
+unicode-range: U+0041-005A, U+0061-007A;
+*/
 @font-face {
-  font-family: 'NotoSansKR-Regular';
-  font-style: normal;
+
+  font-family: 'font-r';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
   font-weight: 400;
-  src: local('NotoSansKR-Regular'),
-       local('NotoSansKR-Regular'),
-       url(/fonts/NotoSansKR-Regular.woff2) format('woff2'),
-       url(/fonts/NotoSansKR-Regular.woff) format('woff'),
-       url(/fonts/NotoSansKR-Regular.otf) format('opentype');
+  font-style: normal;
+       
 }
 
 @font-face {
-  font-family: 'NotoSansKR-Bold';
+  font-family: 'font-l';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 200;
   font-style: normal;
-  font-weight: 400;
-  src: local('NotoSansKR-Bold'),
-       local('NotoSansKR-Bold'),
-       url(/fonts/NotoSansKR-Bold.woff2) format('woff2'),
-       url(/fonts/NotoSansKR-Bold.woff) format('woff'),
-       url(/fonts/NotoSansKR-Bold.otf) format('opentype');
+       
 }
 
-body,th,td,input,select,textarea,button, div, span, label {font-family:"NotoSansKR-Regular", '나눔고딕', sans-serif; font-size:14px; color:#333;}
+@font-face {
+  font-family: 'font-m';
+  font-style: normal;
+  font-weight: 500;
+  src: local('AppleSDGothicNeoM'), 
+       url(/fonts/AppleSDGothicNeoM.woff2) format('woff2'),
+       url(/fonts/AppleSDGothicNeoM.woff) format('woff'),
+       url(/fonts/AppleSDGothicNeoM.ttf) format('typetype');
+}
+
+@font-face {
+  font-family: 'font-b';
+  font-style: normal;
+  font-weight: 600;
+  src: local('AppleSDGothicNeoB'), 
+       url(/fonts/AppleSDGothicNeoB.woff2) format('woff2'),
+       url(/fonts/AppleSDGothicNeoB.woff) format('woff'),
+       url(/fonts/AppleSDGothicNeoB.ttf) format('typetype');
+}
+
+@font-face {
+  font-family: 'font-eb';
+  font-style: normal;
+  font-weight: 800;
+  src: local('AppleSDGothicNeoEB'), 
+       url(/fonts/AppleSDGothicNeoEB.woff2) format('woff2'),
+       url(/fonts/AppleSDGothicNeoEB.woff) format('woff'),
+       url(/fonts/AppleSDGothicNeoEB.ttf) format('typetype');
+}
+
+@font-face {
+  font-family: 'font-black';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Pretendard-Black'), 
+       url(/fonts/Pretendard-Black.woff2) format('woff2'),
+       url(/fonts/Pretendard-Black.woff) format('woff');
+}
+
+body,th,td,input,select,textarea,button, div, span, label {font-family:"font-r", '나눔고딕', sans-serif; font-size:14px; color:#333;}
 
 /* 대표 컬러 설정 */
 .essential{color:#FF4A4A;}
 .point_color{color:#FF4A4A;}
 
 /* 폰트 */
-.normal_bold{font-family: '';}
+.normal_bold{font-family: 'font-b';}
 
 /* 라인 */
 hr{width: 100%; height: 0; border: 0; border-bottom: 1px solid #eee;}
@@ -135,8 +170,8 @@ body, html , .wrap{height: 100%;}
 header{height:50px; box-sizing: border-box; position:fixed; top:0; left: 0; width:100%; background: #fff; z-index: 8;}
 header .btn_back{position: absolute; left:0; top:50%; transform: translateY(-50%); width: 24px; padding: 12px; line-height: 1}
 header .btn_home{position: absolute; left:26px; top:50%; transform: translateY(-50%); width: 16px; padding: 16px; line-height: 1}
-header h1{font-size:16px;font-family: 'NanumGothicBold';text-align: center; line-height:50px;}
-header .head_txt{color:#E1B275;font-size:16px;font-family: 'NanumGothicBold';position: absolute;z-index: 1;top:16px;right:20px;}
+header h1{font-size:16px;font-family: 'font-b';text-align: center; line-height:50px;}
+header .head_txt{color:#E1B275;font-size:16px;font-family: 'font-b';position: absolute;z-index: 1;top:16px;right:20px;}
 header .btn_close{position: absolute; right:0; top:50%; transform: translateY(-50%); width: 14px; height: 14px; padding: 16px}
 header .head_btn{position: absolute; right:0; top:55%; transform: translateY(-50%); padding: 16px; font-weight: bold; line-height: 1}
 header .head_btn img{width: 16px;}
